@@ -2,6 +2,11 @@ const { sleep } = require('../helpers')
 
 class GetServiceFee {
   async execute({ code }) {
+    if (code !== 'NATAL2021')
+      return {
+        value: 0,
+      }
+
     await sleep(1500)
 
     return {
