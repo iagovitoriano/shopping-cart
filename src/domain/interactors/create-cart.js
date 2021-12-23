@@ -4,7 +4,7 @@ class CreateCart {
   }
 
   async execute({ customer }) {
-    const cart = await this.cartRepository.create({ customer })
+    const cart = await this.cartRepository.create({ data: customer })
 
     return {
       ...cart,
