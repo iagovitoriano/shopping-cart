@@ -20,7 +20,7 @@ class BaseRepository {
     return this.formatResponse(document)
   }
 
-  async create(data) {
+  async create({ data }) {
     await this.model.insertOne(data)
 
     return this.formatResponse(data)
@@ -34,9 +34,22 @@ class BaseRepository {
     return document
   }
 
+  async updateMany({ conditions, data }) {
+    await this.model.updateMany({ ...conditions }, { $set: { ...data } })
+  }
+
   async deleteById({ id }) {
     await this.updateById({
       id,
+      data: {
+        deleted: true,
+      },
+    })
+  }
+
+  async deleteMany({ conditions }) {
+    await this.updateMany({
+      conditions,
       data: {
         deleted: true,
       },
