@@ -5,8 +5,18 @@ class BaseRepository {
     this.model = model
   }
 
-  formatResponse(data) {
-    const { _id, ...entity } = data
+  formatResponse({ response }) {
+    if (Array.isArray(response))
+      return response.map((item) => {
+        const { _id, ...entity } = item
+
+        return {
+          ...entity,
+          id: _id.toString(),
+        }
+      })
+
+    const { _id, ...entity } = response
 
     return {
       ...entity,
@@ -17,13 +27,24 @@ class BaseRepository {
   async findById({ id }) {
     const document = await this.model.findOne({ _id: ObjectId(id) })
 
-    return this.formatResponse(document)
+    return this.formatResponse({ response: document })
+  }
+
+  async findMany({ conditions }) {
+    const documents = await this.model.find({ ...conditions }).toArray()
+
+    return this.formatResponse({ response: documents })
   }
 
   async create({ data }) {
-    await this.model.insertOne(data)
+    const payload = {
+      ...data,
+      deleted: false,
+    }
 
-    return this.formatResponse(data)
+    await this.model.insertOne(payload)
+
+    return this.formatResponse({ response: payload })
   }
 
   async updateById({ id, data }) {
