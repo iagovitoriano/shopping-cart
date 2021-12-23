@@ -17,10 +17,12 @@ class UpdateProductQuantity {
 
     if (!productAvailable.inStock) throw new Error('Product Unavailable')
 
-    await this.productRepository.create({
+    const productSchema = {
       ...product,
       cart_id: cartId,
-    })
+    }
+
+    await this.productRepository.updateById(product.id, productSchema)
   }
 }
 

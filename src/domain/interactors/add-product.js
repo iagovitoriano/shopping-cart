@@ -17,9 +17,13 @@ class AddProduct {
 
     if (!productAvailable.inStock) throw new Error('Product Unavailable')
 
-    await this.productRepository.create({
-      cart_id: cartId,
+    const productSchema = {
       ...product,
+      cart_id: cartId,
+    }
+
+    await this.productRepository.create({
+      data: productSchema,
     })
   }
 }
