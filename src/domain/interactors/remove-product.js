@@ -1,8 +1,9 @@
 const RemoveProductProtectionStock = require('./remove-product-protection-stock')
 
 class RemoveProduct {
-  constructor({ productRepository }) {
+  constructor({ productRepository, getCartInteractor }) {
     this.productRepository = productRepository
+    this.getCartInteractor = getCartInteractor
   }
 
   async execute({ cartId, product }) {
@@ -15,6 +16,10 @@ class RemoveProduct {
     await this.productRepository.deleteById({
       id: product.id,
     })
+
+    const cart = await this.getCartInteractor.execute({ id: cartId })
+
+    return cart
   }
 }
 

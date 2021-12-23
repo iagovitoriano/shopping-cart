@@ -1,14 +1,17 @@
 class ClearCart {
-  constructor({ productRepository }) {
+  constructor({ productRepository, getCartInteractor }) {
     this.productRepository = productRepository
+    this.getCartInteractor = getCartInteractor
   }
 
   async execute({ cartId }) {
-    const cart = await this.productRepository.deleteMany({
+    await this.productRepository.deleteMany({
       conditions: {
         cart_id: cartId,
       },
     })
+
+    const cart = await this.getCartInteractor.execute({ id: cartId })
 
     return cart
   }
