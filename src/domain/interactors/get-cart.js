@@ -1,7 +1,6 @@
 class GetCart {
-  constructor({ cartRepository, productRepository }) {
+  constructor({ cartRepository }) {
     this.cartRepository = cartRepository
-    this.productRepository = productRepository
   }
 
   async execute({ id }) {
