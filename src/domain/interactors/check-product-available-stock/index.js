@@ -1,8 +1,8 @@
 const { randomizeStockout } = require('./helper')
 
 class CheckProductAvailableStock {
-  async execute({ sku }) {
-    const checkStock = randomizeStockout(0.4)
+  async execute() {
+    const checkStock = await randomizeStockout(0.4)
 
     return checkStock
   }

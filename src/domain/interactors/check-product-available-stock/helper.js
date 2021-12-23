@@ -1,4 +1,8 @@
-const randomizeStockout = (percent) => {
+const { sleep } = require('../../helpers')
+
+const randomizeStockout = async (percent) => {
+  await sleep(1500)
+
   let inStock
 
   if (Math.random() < percent) inStock = false
