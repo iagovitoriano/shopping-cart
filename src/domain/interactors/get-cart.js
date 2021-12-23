@@ -1,7 +1,18 @@
 class GetCart {
-  constructor({ cartRepository, productRepository }) {
+  constructor({
+    cartRepository,
+    productRepository,
+    calculateTotal,
+    getShippingFee,
+    getServiceFee,
+    checkDiscountCoupon,
+  }) {
     this.cartRepository = cartRepository
     this.productRepository = productRepository
+    this.calculateTotal = calculateTotal
+    this.getShippingFee = getShippingFee
+    this.getServiceFee = getServiceFee
+    this.checkDiscountCoupon = checkDiscountCoupon
   }
 
   async execute({ id }) {
@@ -12,10 +23,24 @@ class GetCart {
         deleted: false,
       },
     })
+    const discountCoupon = await this.checkDiscountCoupon({
+      code: cart.discountCoupon,
+    })
 
     return {
       ...cart,
       products,
+      fee: this.calculateTotal.execute({
+        products,
+        discountCoupon,
+        shipping: this.getShippingFee.execute({
+          storeAddress: cart.store.address,
+          customerAddress: cart.customer.address,
+        }),
+        serviceFee: this.getServiceFee.execute({
+          storeId: cart.store.id,
+        }),
+      }),
     }
   }
 }
