@@ -1,3 +1,12 @@
+const MongoDB = require('../../dataSources/mongodb')
+const { port, mongoUri, dbName } = require('./config/env')
 const app = require('./config/app')
 
-app.listen(4033, () => console.log('Server running at http://localhost:4033'))
+MongoDB.connect({
+  uri: mongoUri,
+  dbName,
+})
+  .then(() => {
+    app.listen(port, () => console.log(`Server running at PORT ${port}`))
+  })
+  .catch(console.error)
