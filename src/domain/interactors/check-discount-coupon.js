@@ -1,6 +1,6 @@
 const { sleep } = require('../helpers')
 
-class GetServiceFee {
+class CheckDiscountCoupon {
   async execute({ code }) {
     if (code !== 'NATAL2021')
       return {
@@ -15,4 +15,4 @@ class GetServiceFee {
   }
 }
 
-module.exports = GetServiceFee
+module.exports = CheckDiscountCoupon
