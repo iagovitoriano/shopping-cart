@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  backend:
+    build: .
+    container_name: cart
+    ports:
+      - 4033:4033
+      - 9229:9229
+    volumes:
+      - .:/usr/src/app
+    links:
+      - db_mongo
+    depends_on:
+      - db_mongo
+  db_mongo:
+    image: mongo
+    container_name: cart_mongodb
+    restart: always
+    ports:
+      - 27017-27019:27017-27019
+    environment:
+      - MONGO_INITDB_DATABASE=cart
+    volumes:
+      - mongo:/tmp/mongo
+
+volumes:
+  mongo:
+    driver: local
