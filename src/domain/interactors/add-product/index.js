@@ -1,3 +1,5 @@
+const CheckProductAvailableStock = require('../check-product-available-stock')
+
 class AddProduct {
   constructor({ cartRepository, productRepository }) {
     this.cartRepository = cartRepository
@@ -5,9 +7,11 @@ class AddProduct {
   }
 
   async execute({ cartId, product }) {
-    const productAvailable = {
-      inStock: true,
-    }
+    const checkProductAvailableStock = new CheckProductAvailableStock()
+
+    const productAvailable = await checkProductAvailableStock.execute({
+      sku: product.sku,
+    })
 
     if (!productAvailable.inStock) throw new Error('Product Unavailable')
 
