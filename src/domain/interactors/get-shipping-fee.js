@@ -1,7 +1,7 @@
 const { sleep } = require('../helpers')
 
 class GetShippingFee {
-  async execute() {
+  async execute({ storeAddress, customerAddress }) {
     await sleep(1500)
 
     return {
