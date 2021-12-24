@@ -4,11 +4,10 @@
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
- <a href="#-proximos-passos">Próximos passos</a> •
- <a href="#-observacoes">Observações</a> •
- <a href="#-executando o projeto">Como executar</a> •
- <a href="#-tecnologias">Tecnologias</a> •
+ <a href="#%EF%B8%8F-funcionalidades">Funcionalidades</a> •
+ <a href="#%EF%B8%8F-próximos-passos">Próximos passos</a> •
+ <a href="#%EF%B8%8F-observações">Observações</a> •
+ <a href="#pré-requisitos">Como executar</a> •
 </p>
 
 
@@ -32,7 +31,7 @@ Alguns problemas seriam facilmente resolvidos utilizando IoC, interfaces e algun
 
 ---
 
-### ⚙️ Próximos passos
+### 👷 Próximos passos
 
 - [ ] Testes
 - [ ] Logs
@@ -43,7 +42,7 @@ Alguns problemas seriam facilmente resolvidos utilizando IoC, interfaces e algun
 
 ---
 
-### ⚙️ Observações
+### ❗ Observações
 
 Todos os serviços que violam o **DOMÍNIO** foram mockados nos **INTERADORES**. De acordo com a **Arquitetura Hexagonal/Portas e adaptadores** é necessário implementar uma **fonte de dados** que respeite um contrato e faça a ponte entre os serviços. Essa **fonte de dados** pode ser implementada utilizando qualquer protocólo de comunicação, seja HTTP, SOAP, GraphQL, etc.
 
@@ -53,19 +52,17 @@ Após a implementação dos outros serviços muito trabalho adicional será nece
 
 ### Pré-requisitos
 
-Você precisará das seguintes ferramentas:
-[Git](https://git-scm.com)
-[Docker](https://www.docker.com/).
+Você precisará do [Git](https://git-scm.com), [Docker](https://www.docker.com/) e [Insomnia](https://insomnia.rest/) para clonar, executar e testar o projeto.
 
 #### 🎲 Executando o projeto
 
 ```bash
 
 # Clone este repositório
-$ git clone git@github.com:iagovitoriano/shipping-cart.git
+$ git clone git@github.com:iagovitoriano/shopping-cart.git
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd shipping-cart
+$ cd shopping-cart
 
 # Vá para a pasta server
 $ cd server
@@ -77,13 +74,13 @@ $ docker-compose up
 
 ```
 <p align="center">
-  <a href="https://insomnia.rest/run/?label=LojaIntegrada%20-%20ShoppingCart&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fiagovitoriano%2Fshipping-cart%2Fdevelop%2Finsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
+  <a href="https://insomnia.rest/run/?label=LojaIntegrada%20-%20ShoppingCart&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fiagovitoriano%2Fshopping-cart%2Fdevelop%2Finsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
 </p>
 
-As seguintes ferramentas foram usadas na construção do projeto:
+---
 
--   **[Express](https://expressjs.com/)**
--   **[dotENV](https://github.com/motdotla/dotenv)**
--   **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
--   **[Helmet](https://github.com/helmetjs/helmet)**
--   **[mongodb](https://github.com/mongodb/node-mongodb-native)**
+### Referências
+
+- **[Análise de Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)**
+- **[Explicação original](http://wiki.c2.com/?HexagonalArchitecture)**
+- **[Artigo da Netflix](https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749)**
