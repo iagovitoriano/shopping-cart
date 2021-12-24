@@ -4,6 +4,10 @@ const ClearCart = require('./clear-cart')
 const AddProduct = require('./add-product')
 const UpdateProductQuantity = require('./update-product-quantity')
 const RemoveProduct = require('./remove-product')
+const CalculateTotal = require('./calculate-total')
+const CheckDiscountCoupon = require('./check-discount-coupon')
+const GetServiceFee = require('./get-service-fee')
+const GetShippingFee = require('./get-shipping-fee')
 
 module.exports = {
   CreateCart,
@@ -12,4 +16,8 @@ module.exports = {
   AddProduct,
   UpdateProductQuantity,
   RemoveProduct,
+  CalculateTotal,
+  CheckDiscountCoupon,
+  GetServiceFee,
+  GetShippingFee,
 }
