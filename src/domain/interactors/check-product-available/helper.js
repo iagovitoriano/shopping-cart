@@ -1,6 +1,6 @@
 const { sleep } = require('../../helpers')
 
-const randomizeStockout = async (percent) => {
+const randomizeAvailable = async (percent) => {
   await sleep(100)
 
   let inStock
@@ -10,9 +10,10 @@ const randomizeStockout = async (percent) => {
 
   return {
     inStock,
+    disabled: false,
   }
 }
 
 module.exports = {
-  randomizeStockout,
+  randomizeAvailable,
 }

@@ -1,4 +1,4 @@
-const CheckProductAvailableStock = require('./check-product-available-stock')
+const CheckProductAvailable = require('./check-product-available')
 
 class AddProduct {
   constructor({ productRepository, getCartInteractor }) {
@@ -7,16 +7,18 @@ class AddProduct {
   }
 
   async execute({ cartId, product }) {
-    const { sku, quantity } = product
+    const { external_id, sku, quantity } = product
 
-    const checkProductAvailableStock = new CheckProductAvailableStock()
+    const checkProductAvailable = new CheckProductAvailable()
 
-    const productAvailable = await checkProductAvailableStock.execute({
+    const productAvailable = await checkProductAvailable.execute({
+      external_id,
       sku,
       quantity,
     })
 
-    if (!productAvailable.inStock) throw new Error('Product Unavailable')
+    if (!productAvailable.inStock || productAvailable.disabled)
+      throw new Error('Product Unavailable')
 
     const productSchema = {
       ...product,
