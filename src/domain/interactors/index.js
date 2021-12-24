@@ -8,6 +8,7 @@ const CalculateTotal = require('./calculate-total')
 const CheckDiscountCoupon = require('./check-discount-coupon')
 const GetServiceFee = require('./get-service-fee')
 const GetShippingFee = require('./get-shipping-fee')
+const AddDiscountCoupon = require('./add-discount-coupon')
 
 module.exports = {
   CreateCart,
@@ -20,4 +21,5 @@ module.exports = {
   CheckDiscountCoupon,
   GetServiceFee,
   GetShippingFee,
+  AddDiscountCoupon,
 }
