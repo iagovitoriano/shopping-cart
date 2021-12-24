@@ -23,24 +23,27 @@ class GetCart {
         deleted: false,
       },
     })
-    const discountCoupon = await this.checkDiscountCoupon({
+    const discountCoupon = await this.checkDiscountCoupon.execute({
       code: cart.discountCoupon,
+    })
+    const shipping = await this.getShippingFee.execute({
+      storeAddress: cart.store.address,
+      customerAddress: cart.customer.address,
+    })
+    const serviceFee = await this.getServiceFee.execute({
+      storeId: cart.store.id,
+    })
+    const fee = await this.calculateTotal.execute({
+      products,
+      discountCoupon,
+      shipping,
+      serviceFee,
     })
 
     return {
       ...cart,
       products,
-      fee: this.calculateTotal.execute({
-        products,
-        discountCoupon,
-        shipping: this.getShippingFee.execute({
-          storeAddress: cart.store.address,
-          customerAddress: cart.customer.address,
-        }),
-        serviceFee: this.getServiceFee.execute({
-          storeId: cart.store.id,
-        }),
-      }),
+      fee,
     }
   }
 }
