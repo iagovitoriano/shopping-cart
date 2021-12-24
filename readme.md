@@ -1,43 +1,89 @@
-## REST Client Collection
+<h4 align="center">
+	🚧 Shopping cart - Em desenvolvimento 🚧
+</h4>
 
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=LojaIntegrada%20-%20ShoppingCart&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fiagovitoriano%2Fshipping-cart%2Fdevelop%2Finsomnia.json)
-
-## Desafio técnico Loja Integrada! - API de Carrinho
-
-O carrinho de compras é parte fundamental de um ecommerce. A partir dele é que o processo de compra se inicia. Na Loja Integrada um produto só pode ser comprado se ele tiver sido adicionado ao carrinho.
-
-Uma API de carrinho de compras tem que ser rápida e consistente. A quantidade de requisições nela é bem alta e quanto mais lenta a resposta, menos as pessoas compram. Mas a velocidade não é tudo! Quando a API não consegue responder corretamente às requisições e não tem os tratamentos de erro corretos isso gera inconsistência e os clientes desistem das compras pois acham que a loja não é confiável.
-
-Pense nas possibilidades reais de uma loja. Os produtos acabam pois seu estoque total foi vendido, alguns produtos tem o seu preço (ou nome) alterado, outros são desabilitados, um carrinho pode ser abandonado. Qual será o comportamento do seu carrinho quando um produto não está mais disponível? Um visitante que deixou o carrinho de compras preenchido quando voltar à loja quer ver o seu carrinho de volta, como mostrar o carrinho correto?
-
-Documentação: É super importante, você deve documentar a sua API para que outros humanos possam ler e usar a API. Lembre-se também de documentar como você inicia o projeto e como soluciona os problemas mais comuns na hora de rodar e fazer atualizações no seu código.
-
-Sabemos que a API do Carrinho depende de outras APIs ou de dados pré-existentes no banco de dados e, para isso, deixamos você livre para decidir como quer fazer essa parte adicional.
-
-Algumas possibilidades: Fazer um mock dos dados de produtos ou criar uma API simples para retornar os dados de um produto. Essa não é uma parte crítica, então foque nos requisitos do desafio.
-
-> ## O que é requerido:
-
-- Adicionar um item no carrinho
-- Remover um item do carrinho
-- Atualizar a quantidade de um item no carrinho
-- Limpar o carrinho
-- Adicionar um cupom de desconto ao carrinho
-- Gerar totais e subtotais
-- Persistir o carrinho
-- Recuperar o carrinho
-- Retornar um JSON com o carrinho completo (para ser usado no frontend)
+<p align="center">
+ <a href="#-sobre-o-projeto">Sobre</a> •
+ <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#-proximos-passos">Próximos passos</a> •
+ <a href="#-observacoes">Observações</a> •
+ <a href="#-executando o projeto">Como executar</a> •
+ <a href="#-tecnologias">Tecnologias</a> •
+</p>
 
 
-> ## Siga esses pontos:
+## 💻 Sobre o projeto
 
-- Escolha a linguagem de programação de sua preferência
-- Utilize docker para o criar o ambiente de desenvolvimento
-- Você não precisa construir nenhum HTML nesse desafio
-- Você precisa fazer o commit de todos os arquivos necessários para rodar o projeto (use mensagens de commit que façam sentido)
-- Testes e BDD são bem-vindos
-- Documente a sua API (gere uma documentação legível para humanos
+O carrinho de compras é parte fundamental de um ecommerce. A partir dele é que o processo de compra se inicia. Essa implementação tem como objetivo implementar a [**Arquitetura Hexagonal**](https://netflixtechblog.com/ready-for-changes-with-hexagonal-architecture-b315ec967749) em uma API utilizando JS com o mínimo de dependências possíveis.
 
-> ## Entrega: Deve ser feita em um repositório público no github ou bitbucket com todos os arquivos necessários para rodar o projeto e o histórico de todos os commits, assim como documentações e arquivos auxiliares.
+Alguns problemas seriam facilmente resolvidos utilizando IoC, interfaces e alguns outros recursos, mas é interessante testar novas abordagens num escopo limitado - Para fins de estudo.
 
-Compartilhar com Github users: alefumes, giancarlosouza, gustavorosolem, iurykrieger, jonatasoliveira, mbanton, alexpsilva, villaca, andersonrostirolla, udleinati, natanfernandes, gabrielzevedo, ericrsilva, mhcamillow.
+---
+
+### ⚙️ Funcionalidades
+
+- [x] Adicionar um item no carrinho
+- [x] Remover um item do carrinho
+- [x] Atualizar a quantidade de um item no carrinho
+- [x] Limpar o carrinho
+- [x] Adicionar um cupom de desconto ao carrinho
+- [x] Gerar totais e subtotais
+- [x] Recuperar o carrinho
+
+---
+
+### ⚙️ Próximos passos
+
+- [ ] Testes
+- [ ] Logs
+- [ ] Implementar serviço de promoção (Para validar cupons e aplicar ofertas promocionais)
+- [ ] Implementar serviço entrega (Para calculo de frete e prazos de entrega)
+- [ ] Implementar serviço para gerenciar taxa de serviço
+- [ ] Implementar serviço para gerenciar o catálogo de produtos (estoque, disponibilidade, preço, etc.)
+
+---
+
+### ⚙️ Observações
+
+Todos os serviços que violam o **DOMÍNIO** foram mockados nos **INTERADORES**. De acordo com a **Arquitetura Hexagonal/Portas e adaptadores** é necessário implementar uma **fonte de dados** que respeite um contrato e faça a ponte entre os serviços. Essa **fonte de dados** pode ser implementada utilizando qualquer protocólo de comunicação, seja HTTP, SOAP, GraphQL, etc.
+
+Após a implementação dos outros serviços muito trabalho adicional será necessário para dar suporte a malha, como adicionar padrões para uma **comunicação resiliente**: Retry, backoff, Jitter, etc. Implementar mecanismos para **observabilidade**, **testes de contrato** e por aí vai...
+
+---
+
+### Pré-requisitos
+
+Você precisará das seguintes ferramentas:
+[Git](https://git-scm.com)
+[Docker](https://www.docker.com/).
+
+#### 🎲 Executando o projeto
+
+```bash
+
+# Clone este repositório
+$ git clone git@github.com:iagovitoriano/shipping-cart.git
+
+# Acesse a pasta do projeto no terminal/cmd
+$ cd shipping-cart
+
+# Vá para a pasta server
+$ cd server
+
+# Instale as dependências
+$ docker-compose up
+
+# O servidor será iniciado na porta "4033" -> disponível em "http://localhost:4033"
+
+```
+<p align="center">
+  <a href="https://insomnia.rest/run/?label=LojaIntegrada%20-%20ShoppingCart&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fiagovitoriano%2Fshipping-cart%2Fdevelop%2Finsomnia.json" target="_blank"><img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia"></a>
+</p>
+
+As seguintes ferramentas foram usadas na construção do projeto:
+
+-   **[Express](https://expressjs.com/)**
+-   **[dotENV](https://github.com/motdotla/dotenv)**
+-   **[CORS](https://expressjs.com/en/resources/middleware/cors.html)**
+-   **[Helmet](https://github.com/helmetjs/helmet)**
+-   **[mongodb](https://github.com/mongodb/node-mongodb-native)**
