@@ -9,13 +9,14 @@ class AddDiscountCouponController {
 
     const addDiscountCouponInteractor = await addDiscountCouponCompose()
 
-    await addDiscountCouponInteractor.execute({
+    const cart = await addDiscountCouponInteractor.execute({
       cartId: id,
       code,
     })
 
     return {
-      status: status.NO_CONTENT,
+      status: status.OK,
+      body: cart,
     }
   }
 }
