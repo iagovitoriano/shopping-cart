@@ -4,13 +4,20 @@ class CalculateTotal {
   execute({ products, discountCoupon, shipping, serviceFee }) {
     const totalProductsValue = totalizeProducts(products)
 
-    const total = totalProductsValue + shipping + serviceFee - discountCoupon
+    const total = parseFloat(
+      (
+        totalProductsValue +
+        shipping.value +
+        serviceFee.value -
+        discountCoupon.value
+      ).toFixed(2)
+    )
 
     return {
       subTotal: totalProductsValue,
-      shipping,
-      serviceFee,
-      discountCoupon,
+      shipping: shipping.value,
+      service_fee: serviceFee.value,
+      discount_coupon: discountCoupon.value,
       total,
     }
   }
