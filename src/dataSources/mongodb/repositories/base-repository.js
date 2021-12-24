@@ -7,16 +7,13 @@ class BaseRepository {
 
   formatResponse({ response }) {
     if (Array.isArray(response))
-      return response.map((item) => {
-        const { _id, ...entity } = item
+      return response.map((item) => this.setSchema({ item }))
 
-        return {
-          ...entity,
-          id: _id.toString(),
-        }
-      })
+    return this.setSchema({ data: response })
+  }
 
-    const { _id, ...entity } = response
+  setSchema({ data }) {
+    const { _id, deleted, ...entity } = data
 
     return {
       ...entity,
