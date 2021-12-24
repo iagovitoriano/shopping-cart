@@ -24,6 +24,7 @@
     "lines-between-class-members": "off",
     "max-classes-per-file": "off",
     "no-plusplus": "off",
-    "no-promise-executor-return": "off"
+    "no-promise-executor-return": "off",
+    "global-require": "off"
   }
 }
