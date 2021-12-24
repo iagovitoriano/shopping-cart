@@ -7,7 +7,7 @@ class BaseRepository {
 
   formatResponse({ response }) {
     if (Array.isArray(response))
-      return response.map((item) => this.setSchema({ item }))
+      return response.map((item) => this.setSchema({ data: item }))
 
     return this.setSchema({ data: response })
   }
