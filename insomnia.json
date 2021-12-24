@@ -1,0 +1,277 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2021-12-24T13:11:51.706Z",
+  "__export_source": "insomnia.desktop.app:v2021.7.2",
+  "resources": [
+    {
+      "_id": "req_16c03738e1c54a3f9e608fde110dbbd1",
+      "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
+      "modified": 1640315070620,
+      "created": 1640302972062,
+      "url": "{{BASE_URL}}/cart",
+      "name": "Create Cart",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"customer\": {\n\t\t\"id\": \"1f998a63-78af-467c-b3fc-48d8e0f9ead0\",\n\t\t\"first_name\": \"leta\",\n\t\t\"last_name\": \"McCullough\",\n    \"email\": \"leopold.Lueilwitz@hotmail.com\",\n\t\t\"document\": \"26439482033\",\n\t\t\"birth_date\": \"1997-10-17\",\n    \"address\": {\n      \"street\": \"Malibu Point\",\n      \"number\": \"10880\",\n      \"complement\": \"A\",\n      \"neighborhood\": \"Central Malibu\",\n      \"city\": \"Malibu\",\n      \"state\": \"CA\",\n      \"country\": \"US\",\n      \"zip_code\": \"24210460\"\n\t\t}\n\t},\n\t\"store\": {\n\t\t\"id\": \"6b51ce54-0a04-4c39-899c-52c963675430\",\n    \"external_id\": \"97641\",\n\t\t\"name\": \"Loja Integrada Express\",\n\t\t\"address\": {\n      \"street\": \"Malibu Point\",\n      \"number\": \"10880\",\n      \"complement\": \"A\",\n      \"neighborhood\": \"Central Malibu\",\n      \"city\": \"Malibu\",\n      \"state\": \"CA\",\n      \"country\": \"US\",\n      \"zip_code\": \"24210460\"\n\t\t}\n\t}\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_3a3a5caa1e5d4423bcc308aac84ec029"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1640302972062,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_b13dc79d04ac4442b16388956bb3957e",
+      "parentId": "wrk_097546b90ffc4813ae5c855ce0f471f6",
+      "modified": 1640302771712,
+      "created": 1640302771712,
+      "name": "Cart",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1640302771712,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_097546b90ffc4813ae5c855ce0f471f6",
+      "parentId": null,
+      "modified": 1640302768072,
+      "created": 1640302768072,
+      "name": "LojaIntegrada",
+      "description": "",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "req_712cca1f38e54e93a8de3baf376c3bd0",
+      "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
+      "modified": 1640315249755,
+      "created": 1640302776680,
+      "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e",
+      "name": "Get Cart",
+      "description": "",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1640302776681,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_583c5904da1d46c3a525789049a6f392",
+      "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
+      "modified": 1640315253062,
+      "created": 1640302979235,
+      "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e/clear",
+      "name": "Clear Cart",
+      "description": "",
+      "method": "PATCH",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1640302776631,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_00b853f80cd34262ab8c2be5473178b2",
+      "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
+      "modified": 1640315257205,
+      "created": 1640306786635,
+      "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e/discount-coupon",
+      "name": "Add Discount Coupon",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"code\": \"NATAL2021\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_40dc581a538240e7b387cd36c028b4f7"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1640302776606,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_74f4563fff4e4311866b792bfceb8b6e",
+      "parentId": "fld_875a66470d764efc88ed4fbb53be06ee",
+      "modified": 1640315294957,
+      "created": 1640306726305,
+      "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e/product",
+      "name": "Add Product",
+      "description": "",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"product_id\": \"568d1d7e-87a6-4524-a895-c60a72a65ec0\",\n\t\"external_id\": \"8372\",\n\t\"sku\": \"WAL_BLK_25\",\n\t\"name\": \"Sample\",\n\t\"description\": \"A sample description\",\n\t\"quantity\": 3,\n\t\"value\": 17.47,\n\t\"tags\": [\n\t\t\"sample\"\n\t],\n  \"created_at\": \"2014-06-12T16:28:13-04:00\",\n\t\"updated_at\": \"2014-06-12T16:28:13-04:00\",\n\t\"published_at\": \"2014-06-12T16:28:11-04:00\",\n\t\"images\": [],\n\t\"variants\": []\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_bfb3acdc1db64928bb2f93ffb0116017"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1640306726305,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_875a66470d764efc88ed4fbb53be06ee",
+      "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
+      "modified": 1640306719985,
+      "created": 1640306718113,
+      "name": "Products",
+      "description": "",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1640302776581,
+      "_type": "request_group"
+    },
+    {
+      "_id": "req_b1fc988b3e2b47ceab82c382a994d660",
+      "parentId": "fld_875a66470d764efc88ed4fbb53be06ee",
+      "modified": 1640315291008,
+      "created": 1640306737488,
+      "url": "{{BASE_URL}}/cart/61c536e6d63d77816cbccbf8/product/61c53719d63d77816cbccbfa/quantity",
+      "name": "Update Product Quantity",
+      "description": "",
+      "method": "PATCH",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"quantity\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json",
+          "id": "pair_330640d30c974ea7a82ee21bdf40034a"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1640306726255,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_6c47a9cc650c4d2b98da69062d09a7b0",
+      "parentId": "fld_875a66470d764efc88ed4fbb53be06ee",
+      "modified": 1640314821698,
+      "created": 1640306749726,
+      "url": "{{BASE_URL}}/cart/61c536e6d63d77816cbccbf8/product/61c536f6d63d77816cbccbf9/clear",
+      "name": "Remove Product",
+      "description": "",
+      "method": "PATCH",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1640304849158.5,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_91331f49690bd0f031719b6c1ab74ad58d91b55e",
+      "parentId": "wrk_097546b90ffc4813ae5c855ce0f471f6",
+      "modified": 1640315068083,
+      "created": 1640302768078,
+      "name": "Base Environment",
+      "data": {
+        "BASE_URL": "http://localhost:4033/api/v1"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "BASE_URL"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1640302768078,
+      "_type": "environment"
+    },
+    {
+      "_id": "jar_91331f49690bd0f031719b6c1ab74ad58d91b55e",
+      "parentId": "wrk_097546b90ffc4813ae5c855ce0f471f6",
+      "modified": 1640302768080,
+      "created": 1640302768080,
+      "name": "Default Jar",
+      "cookies": [],
+      "_type": "cookie_jar"
+    },
+    {
+      "_id": "spc_9f7be453863147c291d1d7f7294d16e7",
+      "parentId": "wrk_097546b90ffc4813ae5c855ce0f471f6",
+      "modified": 1640302768074,
+      "created": 1640302768074,
+      "fileName": "LojaIntegrada",
+      "contents": "",
+      "contentType": "yaml",
+      "_type": "api_spec"
+    }
+  ]
+}
