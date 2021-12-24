@@ -10,14 +10,12 @@ class AddDiscountCoupon {
       code,
     })
 
-    await this.cartRepository.updateById(
-      {
-        id: cartId,
-      },
-      {
+    await this.cartRepository.updateById({
+      id: cartId,
+      data: {
         discount_coupon: code,
-      }
-    )
+      },
+    })
 
     const cart = await this.getCartInteractor.execute({ id: cartId })
 
