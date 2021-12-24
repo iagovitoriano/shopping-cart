@@ -1,4 +1,4 @@
-const expressRouterAdapter = require('./expressRouterAdapter')
+const expressRouterAdapter = require('./express-router-adapter')
 
 module.exports = {
   expressRouterAdapter,
