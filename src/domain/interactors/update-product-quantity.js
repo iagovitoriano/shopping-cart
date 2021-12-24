@@ -1,5 +1,5 @@
 const CheckProductAvailable = require('./check-product-available')
-const { Conflict } = require('../../transportLayer/http/errors')
+const { ConflictError } = require('../../transportLayer/http/errors')
 
 class UpdateProductQuantity {
   constructor({ productRepository, getCartInteractor }) {
@@ -19,7 +19,7 @@ class UpdateProductQuantity {
     })
 
     if (!productAvailable.inStock || productAvailable.disabled)
-      throw new Conflict('Product Unavailable')
+      throw new ConflictError('Product Unavailable')
 
     const productSchema = {
       ...product,
