@@ -1,15 +1,20 @@
 class CreateCart {
-  constructor({ cartRepository }) {
+  constructor({ cartRepository, getCartInteractor }) {
     this.cartRepository = cartRepository
+    this.getCartInteractor = getCartInteractor
   }
 
-  async execute({ customer }) {
-    const cart = await this.cartRepository.create({ data: customer })
+  async execute({ customer, store }) {
+    const { id } = await this.cartRepository.create({
+      data: {
+        customer,
+        store,
+      },
+    })
 
-    return {
-      ...cart,
-      products: [],
-    }
+    const cart = await this.getCartInteractor.execute({ id })
+
+    return cart
   }
 }
 
