@@ -6,6 +6,8 @@ class BaseRepository {
   }
 
   formatResponse({ response }) {
+    if (!response) return null
+
     if (Array.isArray(response))
       return response.map((item) => this.setSchema({ data: item }))
 
@@ -19,6 +21,12 @@ class BaseRepository {
       ...entity,
       id: _id.toString(),
     }
+  }
+
+  async findByKeys({ conditions }) {
+    const document = await this.model.findOne({ ...conditions })
+
+    return this.formatResponse({ response: document })
   }
 
   async findById({ id }) {

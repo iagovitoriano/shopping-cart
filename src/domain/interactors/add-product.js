@@ -23,9 +23,17 @@ class AddProduct {
       cart_id: cartId,
     }
 
-    await this.productRepository.create({
-      data: productSchema,
+    const productAlreadyExists = await this.productRepository.findByKeys({
+      conditions: {
+        product_id: productSchema.product_id,
+        deleted: false,
+      },
     })
+
+    if (!productAlreadyExists)
+      await this.productRepository.create({
+        data: productSchema,
+      })
 
     const cart = await this.getCartInteractor.execute({ id: cartId })
 
