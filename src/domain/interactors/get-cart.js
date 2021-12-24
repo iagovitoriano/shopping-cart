@@ -24,7 +24,7 @@ class GetCart {
       },
     })
     const discountCoupon = await this.checkDiscountCoupon.execute({
-      code: cart.discountCoupon,
+      code: cart.discount_coupon,
     })
     const shipping = await this.getShippingFee.execute({
       storeAddress: cart.store.address,
