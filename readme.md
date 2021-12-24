@@ -1,3 +1,7 @@
+## REST Client Collection
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=LojaIntegrada%20-%20ShoppingCart&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fiagovitoriano%2Fshipping-cart%2Fdevelop%2Finsomnia.json)
+
 ## Desafio técnico Loja Integrada! - API de Carrinho
 
 O carrinho de compras é parte fundamental de um ecommerce. A partir dele é que o processo de compra se inicia. Na Loja Integrada um produto só pode ser comprado se ele tiver sido adicionado ao carrinho.
