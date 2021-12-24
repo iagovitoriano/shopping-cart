@@ -6,7 +6,7 @@ class CreateCartController {
   async route(httpRequest) {
     const { customer, store } = httpRequest.body
 
-    const createCartInteractor = await createCartCompose()
+    const createCartInteractor = createCartCompose()
 
     const cart = await createCartInteractor.execute({
       customer,

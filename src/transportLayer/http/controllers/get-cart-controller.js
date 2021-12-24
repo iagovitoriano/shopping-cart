@@ -6,7 +6,7 @@ class GetCartController {
   async route(httpRequest) {
     const { id } = httpRequest.params
 
-    const getCartInteractor = await getCartCompose()
+    const getCartInteractor = getCartCompose()
 
     const cart = await getCartInteractor.execute({
       id,

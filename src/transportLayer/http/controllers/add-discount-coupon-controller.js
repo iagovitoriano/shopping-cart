@@ -7,7 +7,7 @@ class AddDiscountCouponController {
     const { id } = httpRequest.params
     const { code } = httpRequest.body
 
-    const addDiscountCouponInteractor = await addDiscountCouponCompose()
+    const addDiscountCouponInteractor = addDiscountCouponCompose()
 
     const cart = await addDiscountCouponInteractor.execute({
       cartId: id,
