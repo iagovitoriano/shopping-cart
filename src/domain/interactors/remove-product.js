@@ -6,16 +6,16 @@ class RemoveProduct {
     this.getCartInteractor = getCartInteractor
   }
 
-  async execute({ cartId, product }) {
+  async execute({ cartId, productId }) {
+    const product = await this.productRepository.findById({ id: productId })
     const { sku, quantity } = product
-
-    const removeProductProtectionStock = new RemoveProductProtectionStock()
-
-    await removeProductProtectionStock.execute({ sku, quantity })
 
     await this.productRepository.deleteById({
       id: product.id,
     })
+
+    const removeProductProtectionStock = new RemoveProductProtectionStock()
+    await removeProductProtectionStock.execute({ sku, quantity })
 
     const cart = await this.getCartInteractor.execute({ id: cartId })
 
