@@ -23,7 +23,10 @@ class UpdateProductQuantity {
       cart_id: cartId,
     }
 
-    await this.productRepository.updateById(product.id, productSchema)
+    await this.productRepository.updateById({
+      id: product.id,
+      data: productSchema,
+    })
 
     const cart = await this.getCartInteractor.execute({ id: cartId })
 
