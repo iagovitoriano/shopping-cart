@@ -1,7 +1,7 @@
 const { sleep } = require('../../helpers')
 
 const randomizeStockout = async (percent) => {
-  await sleep(1500)
+  await sleep(100)
 
   let inStock
 
