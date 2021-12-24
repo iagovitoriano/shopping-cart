@@ -5,8 +5,8 @@
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#%EF%B8%8F-funcionalidades">Funcionalidades</a> •
- <a href="#%EF%B8%8F-próximos-passos">Próximos passos</a> •
- <a href="#%EF%B8%8F-observações">Observações</a> •
+ <a href="#-próximos-passos">Próximos passos</a> •
+ <a href="#-observações">Observações</a> •
  <a href="#pré-requisitos">Como executar</a> •
 </p>
 
