@@ -1,17 +1,15 @@
-const { totalizeProducts } = require('./helper')
+const { totalizeProducts, secureTotalizeCart } = require('./helper')
 
 class CalculateTotal {
   execute({ products, discountCoupon, shipping, serviceFee }) {
     const totalProductsValue = totalizeProducts(products)
 
-    const total = parseFloat(
-      (
-        totalProductsValue +
-        shipping.value +
-        serviceFee.value -
-        discountCoupon.value
-      ).toFixed(2)
-    )
+    const total = secureTotalizeCart({
+      products: totalProductsValue,
+      shipping,
+      serviceFee,
+      discountCoupon,
+    })
 
     return {
       subTotal: totalProductsValue,
