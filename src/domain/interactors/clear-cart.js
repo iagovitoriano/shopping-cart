@@ -4,14 +4,14 @@ class ClearCart {
     this.getCartInteractor = getCartInteractor
   }
 
-  async execute({ cartId }) {
+  async execute({ id }) {
     await this.productRepository.deleteMany({
       conditions: {
-        cart_id: cartId,
+        cart_id: id,
       },
     })
 
-    const cart = await this.getCartInteractor.execute({ id: cartId })
+    const cart = await this.getCartInteractor.execute({ id })
 
     return cart
   }
