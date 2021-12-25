@@ -4,7 +4,7 @@ class BaseError extends Error {
     Error.captureStackTrace(this, this.constructor)
 
     this.name = this.constructor.name
-    this.status = null
+    this.statusCode = null
   }
 
   statusCode() {

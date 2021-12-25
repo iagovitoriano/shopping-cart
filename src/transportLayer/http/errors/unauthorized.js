@@ -2,11 +2,11 @@ const httpStatus = require('http-status')
 
 const CustomError = require('./custom-error')
 
-class ConflictError extends CustomError {
+class UnAuthorizedError extends CustomError {
   constructor(message) {
     super(message)
-    this.statusCode = httpStatus.CONFLICT
+    this.statusCode = httpStatus.UNAUTHORIZED
   }
 }
 
-module.exports = ConflictError
+module.exports = UnAuthorizedError

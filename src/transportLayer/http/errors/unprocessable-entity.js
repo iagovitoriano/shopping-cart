@@ -1,9 +1,11 @@
+const httpStatus = require('http-status')
+
 const CustomError = require('./custom-error')
 
 class UnprocessableEntityError extends CustomError {
   constructor(message) {
     super(message)
-    this.status = 409
+    this.statusCode = httpStatus.UNPROCESSABLE_ENTITY
   }
 }
 
