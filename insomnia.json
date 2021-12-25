@@ -1,13 +1,13 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2021-12-24T13:11:51.706Z",
+  "__export_date": "2021-12-25T22:24:09.436Z",
   "__export_source": "insomnia.desktop.app:v2021.7.2",
   "resources": [
     {
       "_id": "req_16c03738e1c54a3f9e608fde110dbbd1",
       "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
-      "modified": 1640315070620,
+      "modified": 1640470154803,
       "created": 1640302972062,
       "url": "{{BASE_URL}}/cart",
       "name": "Create Cart",
@@ -23,6 +23,12 @@
           "name": "Content-Type",
           "value": "application/json",
           "id": "pair_3a3a5caa1e5d4423bcc308aac84ec029"
+        },
+        {
+          "id": "pair_0538fed22c934782874c61c2e48d3d5d",
+          "name": "authorization",
+          "value": "bearer {{AUTH_TOKEN}}",
+          "description": ""
         }
       ],
       "authentication": {},
@@ -61,7 +67,7 @@
     {
       "_id": "req_712cca1f38e54e93a8de3baf376c3bd0",
       "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
-      "modified": 1640315249755,
+      "modified": 1640372837982,
       "created": 1640302776680,
       "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e",
       "name": "Get Cart",
@@ -69,7 +75,14 @@
       "method": "GET",
       "body": {},
       "parameters": [],
-      "headers": [],
+      "headers": [
+        {
+          "id": "pair_568531a28b7a4cab8fef56c671bedf0d",
+          "name": "authorization",
+          "value": "bearer {{AUTH_TOKEN}}",
+          "description": ""
+        }
+      ],
       "authentication": {},
       "metaSortKey": -1640302776681,
       "isPrivate": false,
@@ -84,7 +97,7 @@
     {
       "_id": "req_583c5904da1d46c3a525789049a6f392",
       "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
-      "modified": 1640315253062,
+      "modified": 1640372843152,
       "created": 1640302979235,
       "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e/clear",
       "name": "Clear Cart",
@@ -92,7 +105,14 @@
       "method": "PATCH",
       "body": {},
       "parameters": [],
-      "headers": [],
+      "headers": [
+        {
+          "id": "pair_c14b5fc9756c465eb7a36be7e0ef096a",
+          "name": "authorization",
+          "value": "bearer {{AUTH_TOKEN}}",
+          "description": ""
+        }
+      ],
       "authentication": {},
       "metaSortKey": -1640302776631,
       "isPrivate": false,
@@ -107,7 +127,7 @@
     {
       "_id": "req_00b853f80cd34262ab8c2be5473178b2",
       "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
-      "modified": 1640315257205,
+      "modified": 1640372847677,
       "created": 1640306786635,
       "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e/discount-coupon",
       "name": "Add Discount Coupon",
@@ -123,6 +143,12 @@
           "name": "Content-Type",
           "value": "application/json",
           "id": "pair_40dc581a538240e7b387cd36c028b4f7"
+        },
+        {
+          "id": "pair_ff89ab4fc2b84281b3ce7dd6d5b180b3",
+          "name": "authorization",
+          "value": "bearer {{AUTH_TOKEN}}",
+          "description": ""
         }
       ],
       "authentication": {},
@@ -139,9 +165,9 @@
     {
       "_id": "req_74f4563fff4e4311866b792bfceb8b6e",
       "parentId": "fld_875a66470d764efc88ed4fbb53be06ee",
-      "modified": 1640315294957,
+      "modified": 1640470159700,
       "created": 1640306726305,
-      "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e/product",
+      "url": "{{BASE_URL}}/cart/61c5e919331ab2b44f3b8dd2/product",
       "name": "Add Product",
       "description": "",
       "method": "POST",
@@ -155,6 +181,12 @@
           "name": "Content-Type",
           "value": "application/json",
           "id": "pair_bfb3acdc1db64928bb2f93ffb0116017"
+        },
+        {
+          "id": "pair_76a2a8ea4d794cf88aaeeda4dc5dcc52",
+          "name": "authorization",
+          "value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+          "description": ""
         }
       ],
       "authentication": {},
@@ -183,7 +215,7 @@
     {
       "_id": "req_b1fc988b3e2b47ceab82c382a994d660",
       "parentId": "fld_875a66470d764efc88ed4fbb53be06ee",
-      "modified": 1640315291008,
+      "modified": 1640470068009,
       "created": 1640306737488,
       "url": "{{BASE_URL}}/cart/61c536e6d63d77816cbccbf8/product/61c53719d63d77816cbccbfa/quantity",
       "name": "Update Product Quantity",
@@ -199,6 +231,12 @@
           "name": "Content-Type",
           "value": "application/json",
           "id": "pair_330640d30c974ea7a82ee21bdf40034a"
+        },
+        {
+          "id": "pair_034b26ff02d54afab8152312787dcf6d",
+          "name": "authorization",
+          "value": "bearer {{AUTH_TOKEN}}",
+          "description": ""
         }
       ],
       "authentication": {},
@@ -215,7 +253,7 @@
     {
       "_id": "req_6c47a9cc650c4d2b98da69062d09a7b0",
       "parentId": "fld_875a66470d764efc88ed4fbb53be06ee",
-      "modified": 1640314821698,
+      "modified": 1640470064872,
       "created": 1640306749726,
       "url": "{{BASE_URL}}/cart/61c536e6d63d77816cbccbf8/product/61c536f6d63d77816cbccbf9/clear",
       "name": "Remove Product",
@@ -223,7 +261,14 @@
       "method": "PATCH",
       "body": {},
       "parameters": [],
-      "headers": [],
+      "headers": [
+        {
+          "id": "pair_0543f30a2c2942088acca56f7eb416ff",
+          "name": "authorization",
+          "value": "bearer {{AUTH_TOKEN}}",
+          "description": ""
+        }
+      ],
       "authentication": {},
       "metaSortKey": -1640304849158.5,
       "isPrivate": false,
@@ -238,15 +283,17 @@
     {
       "_id": "env_91331f49690bd0f031719b6c1ab74ad58d91b55e",
       "parentId": "wrk_097546b90ffc4813ae5c855ce0f471f6",
-      "modified": 1640315068083,
+      "modified": 1640372887018,
       "created": 1640302768078,
       "name": "Base Environment",
       "data": {
-        "BASE_URL": "http://localhost:4033/api/v1"
+        "BASE_URL": "http://localhost:4033/api/v1",
+        "AUTH_TOKEN": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c"
       },
       "dataPropertyOrder": {
         "&": [
-          "BASE_URL"
+          "BASE_URL",
+          "AUTH_TOKEN"
         ]
       },
       "color": null,
