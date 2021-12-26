@@ -1,4 +1,5 @@
 const status = require('http-status')
+const Joi = require('joi')
 
 const { addDiscountCouponCompose } = require('../composers')
 
@@ -18,6 +19,12 @@ class AddDiscountCouponController {
       status: status.OK,
       body: cart,
     }
+  }
+
+  async getDto() {
+    return Joi.object({
+      code: Joi.string().min(4).max(16).required(),
+    })
   }
 }
 
