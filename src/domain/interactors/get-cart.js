@@ -1,3 +1,5 @@
+const { NotFoundError } = require('../../transportLayer/http/errors')
+
 class GetCart {
   constructor({
     cartRepository,
@@ -17,6 +19,9 @@ class GetCart {
 
   async execute({ id }) {
     const cart = await this.cartRepository.findById({ id })
+
+    if (!cart) throw new NotFoundError('Cart Not Exists.')
+
     const products = await this.productRepository.findMany({
       conditions: {
         cart_id: id,
