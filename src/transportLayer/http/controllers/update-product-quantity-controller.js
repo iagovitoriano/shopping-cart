@@ -1,4 +1,5 @@
 const status = require('http-status')
+const Joi = require('joi')
 
 const { updateProductQuantityCompose } = require('../composers')
 
@@ -20,6 +21,14 @@ class UpdateProductQuantityController {
       status: status.OK,
       body: cart,
     }
+  }
+
+  async getDto() {
+    const product = Joi.object({
+      quantity: Joi.number().integer().positive().required(),
+    })
+
+    return product
   }
 }
 
