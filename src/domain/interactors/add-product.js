@@ -29,6 +29,7 @@ class AddProduct {
     const productAlreadyExists = await this.productRepository.findByKeys({
       conditions: {
         product_id: productSchema.product_id,
+        cart_id: cartId,
         deleted: false,
       },
     })

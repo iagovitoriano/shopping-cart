@@ -1,4 +1,5 @@
 const RemoveProductProtectionStock = require('./remove-product-protection-stock')
+const { NotFoundError } = require('../../transportLayer/http/errors')
 
 class RemoveProduct {
   constructor({ productRepository, getCartInteractor }) {
@@ -7,7 +8,16 @@ class RemoveProduct {
   }
 
   async execute({ cartId, productId }) {
-    const product = await this.productRepository.findById({ id: productId })
+    const product = await this.productRepository.findByKeys({
+      conditions: {
+        id: productId,
+        cart_id: cartId,
+        deleted: false,
+      },
+    })
+
+    if (!product) throw new NotFoundError('Product Not Exists.')
+
     const { sku, quantity } = product
 
     await this.productRepository.deleteById({
