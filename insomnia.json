@@ -1,13 +1,13 @@
 {
   "_type": "export",
   "__export_format": 4,
-  "__export_date": "2021-12-25T22:24:09.436Z",
+  "__export_date": "2021-12-27T12:26:42.123Z",
   "__export_source": "insomnia.desktop.app:v2021.7.2",
   "resources": [
     {
       "_id": "req_16c03738e1c54a3f9e608fde110dbbd1",
       "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
-      "modified": 1640470154803,
+      "modified": 1640607473831,
       "created": 1640302972062,
       "url": "{{BASE_URL}}/cart",
       "name": "Create Cart",
@@ -15,7 +15,7 @@
       "method": "POST",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"customer\": {\n\t\t\"id\": \"1f998a63-78af-467c-b3fc-48d8e0f9ead0\",\n\t\t\"first_name\": \"leta\",\n\t\t\"last_name\": \"McCullough\",\n    \"email\": \"leopold.Lueilwitz@hotmail.com\",\n\t\t\"document\": \"26439482033\",\n\t\t\"birth_date\": \"1997-10-17\",\n    \"address\": {\n      \"street\": \"Malibu Point\",\n      \"number\": \"10880\",\n      \"complement\": \"A\",\n      \"neighborhood\": \"Central Malibu\",\n      \"city\": \"Malibu\",\n      \"state\": \"CA\",\n      \"country\": \"US\",\n      \"zip_code\": \"24210460\"\n\t\t}\n\t},\n\t\"store\": {\n\t\t\"id\": \"6b51ce54-0a04-4c39-899c-52c963675430\",\n    \"external_id\": \"97641\",\n\t\t\"name\": \"Loja Integrada Express\",\n\t\t\"address\": {\n      \"street\": \"Malibu Point\",\n      \"number\": \"10880\",\n      \"complement\": \"A\",\n      \"neighborhood\": \"Central Malibu\",\n      \"city\": \"Malibu\",\n      \"state\": \"CA\",\n      \"country\": \"US\",\n      \"zip_code\": \"24210460\"\n\t\t}\n\t}\n}"
+        "text": "{\n\t\"customer\": {\n\t\t\"id\": \"1f998a63-78af-467c-b3fc-48d8e0f9ead0\",\n\t\t\"first_name\": \"leta\",\n\t\t\"last_name\": \"McCullough\",\n    \"email\": \"leopold.Lueilwitz@hotmail.com\",\n\t\t\"document\": \"26439482033\",\n\t\t\"birth_date\": \"1997-10-17\",\n    \"address\": {\n      \"street\": \"Malibu Point\",\n      \"number\": 10880,\n      \"complement\": \"A\",\n      \"neighborhood\": \"Central Malibu\",\n      \"city\": \"Malibu\",\n      \"state\": \"CA\",\n      \"country\": \"US\",\n      \"zip_code\": \"24210460\"\n\t\t}\n\t},\n\t\"store\": {\n\t\t\"id\": \"6b51ce54-0a04-4c39-899c-52c963675430\",\n    \"external_id\": \"97641\",\n\t\t\"name\": \"Loja Integrada Express\",\n\t\t\"address\": {\n      \"street\": \"Malibu Point\",\n      \"number\": 10880,\n      \"complement\": \"A\",\n      \"neighborhood\": \"Central Malibu\",\n      \"city\": \"Malibu\",\n      \"state\": \"CA\",\n      \"country\": \"US\",\n      \"zip_code\": \"24210460\"\n\t\t}\n\t}\n}"
       },
       "parameters": [],
       "headers": [
@@ -67,9 +67,9 @@
     {
       "_id": "req_712cca1f38e54e93a8de3baf376c3bd0",
       "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
-      "modified": 1640372837982,
+      "modified": 1640607795651,
       "created": 1640302776680,
-      "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e",
+      "url": "{{BASE_URL}}/cart/61c9aa4196af24ff4dacfda9",
       "name": "Get Cart",
       "description": "",
       "method": "GET",
@@ -97,9 +97,9 @@
     {
       "_id": "req_583c5904da1d46c3a525789049a6f392",
       "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
-      "modified": 1640372843152,
+      "modified": 1640607791930,
       "created": 1640302979235,
-      "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e/clear",
+      "url": "{{BASE_URL}}/cart/61c9aa4196af24ff4dacfda9/clear",
       "name": "Clear Cart",
       "description": "",
       "method": "PATCH",
@@ -127,9 +127,9 @@
     {
       "_id": "req_00b853f80cd34262ab8c2be5473178b2",
       "parentId": "fld_b13dc79d04ac4442b16388956bb3957e",
-      "modified": 1640372847677,
+      "modified": 1640607564262,
       "created": 1640306786635,
-      "url": "{{BASE_URL}}/cart/61c5396a89c77e1d5a925a3e/discount-coupon",
+      "url": "{{BASE_URL}}/cart/61c9aa4196af24ff4dacfda9/discount-coupon",
       "name": "Add Discount Coupon",
       "description": "",
       "method": "PATCH",
@@ -165,9 +165,9 @@
     {
       "_id": "req_74f4563fff4e4311866b792bfceb8b6e",
       "parentId": "fld_875a66470d764efc88ed4fbb53be06ee",
-      "modified": 1640470159700,
+      "modified": 1640607790192,
       "created": 1640306726305,
-      "url": "{{BASE_URL}}/cart/61c5e919331ab2b44f3b8dd2/product",
+      "url": "{{BASE_URL}}/cart/61c9aa4196af24ff4dacfda9/product",
       "name": "Add Product",
       "description": "",
       "method": "POST",
@@ -215,15 +215,15 @@
     {
       "_id": "req_b1fc988b3e2b47ceab82c382a994d660",
       "parentId": "fld_875a66470d764efc88ed4fbb53be06ee",
-      "modified": 1640470068009,
+      "modified": 1640607783238,
       "created": 1640306737488,
-      "url": "{{BASE_URL}}/cart/61c536e6d63d77816cbccbf8/product/61c53719d63d77816cbccbfa/quantity",
+      "url": "{{BASE_URL}}/cart/61c9aa4196af24ff4dacfda9/product/61c9ab91d8d03cbaa1e8bc29/quantity",
       "name": "Update Product Quantity",
       "description": "",
       "method": "PATCH",
       "body": {
         "mimeType": "application/json",
-        "text": "{\n\t\"quantity\": 1\n}"
+        "text": "{\n\t\"quantity\": 3\n}"
       },
       "parameters": [],
       "headers": [
@@ -253,9 +253,9 @@
     {
       "_id": "req_6c47a9cc650c4d2b98da69062d09a7b0",
       "parentId": "fld_875a66470d764efc88ed4fbb53be06ee",
-      "modified": 1640470064872,
+      "modified": 1640607786307,
       "created": 1640306749726,
-      "url": "{{BASE_URL}}/cart/61c536e6d63d77816cbccbf8/product/61c536f6d63d77816cbccbf9/clear",
+      "url": "{{BASE_URL}}/cart/61c9aa4196af24ff4dacfda9/product/61c9ab91d8d03cbaa1e8bc29/clear",
       "name": "Remove Product",
       "description": "",
       "method": "PATCH",
