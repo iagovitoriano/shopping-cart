@@ -33,8 +33,10 @@ Alguns problemas seriam facilmente resolvidos utilizando IoC, interfaces e algun
 
 ### 👷 Próximos passos
 
-- [ ] Testes
-- [ ] Logs
+- [ ] Implementar Testes
+- [ ] Refatorar alguns itens muito acoplados
+- [ ] Melhorar regras de segurança (Apenas o dono do carrinho deve poder alterá-lo, etc.)
+- [ ] Adicionar Logs
 - [ ] Implementar serviço de promoção (Para validar cupons e aplicar ofertas promocionais)
 - [ ] Implementar serviço entrega (Para calculo de frete e prazos de entrega)
 - [ ] Implementar serviço para gerenciar taxa de serviço
